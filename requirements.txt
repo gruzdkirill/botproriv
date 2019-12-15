@@ -1,4 +1,1 @@
 telebot
-aiohttp
-websockets
-chardet
