@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot('990108992:AAG1kxwFJpgcJZVgTlTAxgTVQYEZfjrzYS0')
+bot = telebot.TeleBot(BOT_KEY)
 keyb = telebot.types.ReplyKeyboardMarkup(True)
 keyb.row("❗️Важно❗")
 keyb.row("Тёплые контакты", "Холодные контакты")
