@@ -2,7 +2,7 @@ import telebot
 
 bot = telebot.TeleBot("990108992:AAG1kxwFJpgcJZVgTlTAxgTVQYEZfjrzYS0")
 keyb = telebot.types.ReplyKeyboardMarkup(True)
-keyb.row("❗️Важно❗")
+keyb.row("❗️ Важно ❗")
 keyb.row("Тёплые контакты", "Холодные контакты")
 keyb.row("Утепление", "Возражения")
 keybt = telebot.types.ReplyKeyboardMarkup(True)
@@ -19,7 +19,7 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
     if message.text == 'Холодные контакты':
-        bot.send_message(message.chat.id, '')
+        bot.send_message(message.chat.id, '_')
     elif message.text == 'Тёплые контакты':
         bot.send_message(message.chat.id, '_', reply_markup=keybt)
     elif message.text == '❗️Важно❗️':
