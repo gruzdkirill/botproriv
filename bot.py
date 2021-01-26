@@ -7,7 +7,7 @@ bot = telebot.TeleBot("1501412197:AAHzd30QMMu2UQ5GP2NMbCWurH9ryHLnTD4")
 def start_message(message):
     bot.send_message(message['chat']['id'], 'Привет, это /start')
 
-@bot.route('оло')
+@bot.route('Оло')
 def start_message(message):
     bot.send_message(message['chat']['id'], 'Привет, ты написал мне ' + message['text'])
 
