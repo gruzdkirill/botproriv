@@ -1,14 +1,15 @@
-import telebot
+import telebot as telebot
 
 bot = telebot.TeleBot("1501412197:AAHzd30QMMu2UQ5GP2NMbCWurH9ryHLnTD4")
+keyM = telebot.types.ReplyKeyboardMarkup(row_width=2)
+keyM.row('Оло', 'ща')
 
-@bot.route('/start')
+@bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message['chat']['id'], 'Привет, это /start')
+    bot.send_message(message.chat.id, 'Привет, это /start',  reply_markup=keyM)
 
-@bot.route('Оло')
+@bot.message_handler(content_types=['text'])
 def olo_message(message):
-    bot.send_message(message['chat']['id'], 'Привет, ты написал мне ' + message['text'])
+    bot.send_message(message.chat.id, 'Привет, ты написал мне ' + message.text)
 
-bot.config['api_key'] = '1501412197:AAHzd30QMMu2UQ5GP2NMbCWurH9ryHLnTD4'
-bot.poll()
+bot.polling()
